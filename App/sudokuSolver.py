@@ -9,9 +9,9 @@ board =[
     [0,0,0,4,0,9,0,0,5],
     [0,0,0,2,0,0,0,0,0],
 ]
+
 def solve_sudoku(board):
-    print(board)
-    print('\n')
+
     def is_valid(row, col, num):
         # Check if the number is not present in the same row and column
         for i in range(9):
@@ -52,9 +52,11 @@ def solve_sudoku(board):
         return None
     
     if backtrack():
-        print(board)
-        return (board)
+        return board
+    
     else:
         return ('Invalid Puzzle')  # No solution exists
 
-solve_sudoku(board)
+answer = (solve_sudoku(board))
+for row in answer:
+    print(row)
